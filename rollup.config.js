@@ -52,6 +52,7 @@ export default [
       eslint({
         exclude: [
           'styles/**',
+          'dist'
         ]
       }),
       uglify()
