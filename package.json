@@ -38,7 +38,7 @@
     "reload": "livereload 'dist/'",
     "test": "node test/test.js",
     "pretest": "npm run build",
-    "start": "rollup -c rollup.server.config.js && node server/dev-server.js",
+    "start": "rollup -c && node server/dev-server.js",
     "watch": "npm-run-all --parallel reload dev start"
   },
   "files": [
