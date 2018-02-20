@@ -1,8 +1,8 @@
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('express'), require('hbs'), require('open'), require('reload')) :
-	typeof define === 'function' && define.amd ? define(['express', 'hbs', 'open', 'reload'], factory) :
-	(factory(global.express,global.hbs,global.open,global.reload));
-}(this, (function (express,hbs,open,reload) { 'use strict';
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('express'), require('hbs'), require('open')) :
+	typeof define === 'function' && define.amd ? define(['express', 'hbs', 'open'], factory) :
+	(factory(global.express,global.hbs,global.open));
+}(this, (function (express,hbs,open) { 'use strict';
 
 function __$$styleInject(css, ref) {
   if ( ref === void 0 ) ref = {};
@@ -34,7 +34,6 @@ function __$$styleInject(css, ref) {
 express = express && express.hasOwnProperty('default') ? express['default'] : express;
 hbs = hbs && hbs.hasOwnProperty('default') ? hbs['default'] : hbs;
 open = open && open.hasOwnProperty('default') ? open['default'] : open;
-reload = reload && reload.hasOwnProperty('default') ? reload['default'] : reload;
 
 const port = 3000;
 
@@ -50,7 +49,7 @@ app.use(express.static('dist'));
 app.get('*', function (req, res) {
   res.render('index', {});
 });
-reload(app);
+
 app.listen(port, function (err) {
   console.log(`Rollup app started at http://localhost:${port}/`); // eslint-disable-line no-console
   if (err) {
